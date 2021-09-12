@@ -1,23 +1,20 @@
-# TrollEngine
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fgeneral-infinity%2Ftrollengine%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/general-infinity/trollengine/goto?ref=master) ![Issues](https://img.shields.io/github/issues/general-infinity/trollengine) ![Issues](https://img.shields.io/github/forks/General-Infinity/TrollEngine) ![Issues](https://img.shields.io/github/stars/General-Infinity/TrollEngine)     <a href="https://discord.gg/5mbz9jjMrf">
-        <img src="https://img.shields.io/discord/841019709255974953?logo=discord"
-            alt="chat on Discord"></a>
-
-This is the repository for TrollEngine, a fork of ninjamuffin's Friday Night Funkin.
+# Apple Engine
+Apple Engine is a fork of General Infinity's Troll Engine, which is in itself, a fork of ninjamussin99's Friday Night Funkin.
 
 Play the web version: https://fnf.general-infinity.tech
 
 IF YOU MAKE A MOD AND DISTRIBUTE A MODIFIED / RECOMIPLED VERSION, YOU MUST OPEN SOURCE YOUR MOD AS WELL
 
 ## Credits / shoutouts
-- bit of trolling (me!) - Programmer of the fork
+- bit of trolling - Programmer of Troll Engine
+- Applemunch Studios - Programmer of Apple Engine
 - [ninjamuffin99](https://twitter.com/ninja_muffin99) - Programmer of the original game
 - [PhantomArcade3K](https://twitter.com/phantomarcade3k) and [Evilsk8r](https://twitter.com/evilsk8r) - Art
 - [Kawaisprite](https://twitter.com/kawaisprite) - Musician
 
 This game was made with love to Newgrounds and it's community. Extra love to Tom Fulp.
 
-## Build instructions
+## Build instructions from, Troll Engine
 
 THESE INSTRUCTIONS ARE FOR COMPILING THE GAME'S SOURCE CODE!!!
 
