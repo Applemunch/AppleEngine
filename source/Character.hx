@@ -554,27 +554,30 @@ class Character extends FlxSprite
 				addOffset("singRIGHT-alt", -1, -24);
 				addOffset("singLEFT-alt", -30, 15);
 				addOffset("singDOWN-alt", -30, -27);
-				
+
 				playAnim('idle');
 			default: //use curCharacter as texture and XML name and just hope for the best lol
-				frames = Paths.getSparrowAtlas('munch','shared',true);
+				tex = Paths.getSparrowAtlas(curCharacter,"shared");
+				//if (tex.frames == 0) { //if there's no frames, which means it's nost likely not present, then check ./assets/images instead
+					//frame = Paths.getSparrowAtlas(curCharacter);
+				//}
 
 				animation.addByPrefix('idle', 'Idle', 24, false);
-				animation.addByPrefix('singUP', 'Note Up0', 24, false);
-				animation.addByPrefix('singLEFT', 'Note Left0', 24, false);
-				animation.addByPrefix('singRIGHT', 'Note Right0', 24, false);
-				animation.addByPrefix('singDOWN', 'Note Down0', 24, false);
-				animation.addByPrefix('singUPmiss', 'Note Up Miss0', 24, false);
-				animation.addByPrefix('singLEFTmiss', 'Note Left Miss0', 24, false);
-				animation.addByPrefix('singRIGHTmiss', 'Note Right Miss0', 24, false);
-				animation.addByPrefix('singDOWNmiss', 'Note Down Miss0', 24, false);
+				animation.addByPrefix('singUP', 'Note Up', 24, false);
+				animation.addByPrefix('singLEFT', 'Note Left', 24, false);
+				animation.addByPrefix('singRIGHT', 'Note Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Note Down', 24, false);
+				animation.addByPrefix('singUPmiss', 'Note Up Miss', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'Note Left Miss', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'Note Right Miss', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'Note Down Miss', 24, false);
 				animation.addByPrefix('hey', 'AYY', 24, false);
 
-				animation.addByPrefix('firstDeath', "DeadStart", 24, false);
-				animation.addByPrefix('deathLoop', "DeadLoop", 24, false);
-				animation.addByPrefix('deathConfirm', "DeadContinue", 24, false);
+				//animation.addByPrefix('firstDeath', "DeadStart", 24, false);
+				//animation.addByPrefix('deathLoop', "DeadLoop", 24, false);
+				//animation.addByPrefix('deathConfirm', "DeadContinue", 24, false);
 
-				animation.addByPrefix('scared', 'IdleScared', 24);
+				//animation.addByPrefix('scared', 'IdleScared', 24);
 
 				playAnim('idle');
 		}
@@ -705,9 +708,9 @@ class Character extends FlxSprite
 	{
 		animation.play(AnimName, Force, Reversed, Frame);
 
-		var daOffset = animOffsets.get(AnimName);
 		if (animOffsets.exists(AnimName))
 		{
+			var daOffset = animOffsets.get(AnimName);
 			offset.set(daOffset[0], daOffset[1]);
 		}
 		else
@@ -736,10 +739,12 @@ class Character extends FlxSprite
 		animOffsets[name] = [x, y];
 	}
 	public function offsetcrap(){ //tight ass little man
-		var offsetList = Assets.getText(Paths.txt(curCharacter + "Offsets"));
-		var pissArray:Array<String> = offsetList.split('\n');
-		for (i in 0...pissArray.length){
-			animOffsets[pissArray[i].split(" ")[0]] = [pissArray[i].split(" ")[1], pissArray[i].split(" ")[2]];
+		if (Assets.exists(Paths.txt(curCharacter + "Offsets"))) {
+			var offsetList = Assets.getText(Paths.txt(curCharacter + "Offsets"));
+			var pissArray:Array<String> = offsetList.split('\n');
+			for (i in 0...pissArray.length){
+				animOffsets[pissArray[i].split(" ")[0]] = [pissArray[i].split(" ")[1], pissArray[i].split(" ")[2]];
+			}
 		}
 	}
 }

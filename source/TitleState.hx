@@ -65,10 +65,10 @@ class TitleState extends MusicBeatState
 			librarydirs.set(direcs[i], direcs[i]);
 		}
 		trace(librarydirs);
-		polymod.Polymod.init({modRoot: "mods", dirs: list, frameworkParams: {assetLibraryPaths: librarydirs}});
+		polymod.Polymod.init({modRoot: "mods", dirs: list});
 		#end
 		PlayerSettings.init();
-		
+
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 
 		// DEBUG BULLSHIT
@@ -114,7 +114,7 @@ class TitleState extends MusicBeatState
 
 		#if desktop
 		DiscordClient.initialize();
-		
+
 		Application.current.onExit.add (function (exitCode) {
 			cpp.Lib.print("See you next time!\n");
 			DiscordClient.shutdown();
@@ -158,7 +158,7 @@ class TitleState extends MusicBeatState
 			var now = Date.now();
 			trace(now.getHours());
 			if(now.getHours() >= 18) {
-				FlxG.sound.playMusic(Paths.music('freakyNight'), 0); 
+				FlxG.sound.playMusic(Paths.music('freakyNight'), 0);
 			}
 			else {
 				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
