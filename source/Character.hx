@@ -556,6 +556,27 @@ class Character extends FlxSprite
 				addOffset("singDOWN-alt", -30, -27);
 				
 				playAnim('idle');
+			default: //use curCharacter as texture and XML name and just hope for the best lol
+				frames = Paths.getSparrowAtlas('munch','shared',true);
+
+				animation.addByPrefix('idle', 'Idle', 24, false);
+				animation.addByPrefix('singUP', 'Note Up0', 24, false);
+				animation.addByPrefix('singLEFT', 'Note Left0', 24, false);
+				animation.addByPrefix('singRIGHT', 'Note Right0', 24, false);
+				animation.addByPrefix('singDOWN', 'Note Down0', 24, false);
+				animation.addByPrefix('singUPmiss', 'Note Up Miss0', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'Note Left Miss0', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'Note Right Miss0', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'Note Down Miss0', 24, false);
+				animation.addByPrefix('hey', 'AYY', 24, false);
+
+				animation.addByPrefix('firstDeath', "DeadStart", 24, false);
+				animation.addByPrefix('deathLoop', "DeadLoop", 24, false);
+				animation.addByPrefix('deathConfirm', "DeadContinue", 24, false);
+
+				animation.addByPrefix('scared', 'IdleScared', 24);
+
+				playAnim('idle');
 		}
 		offsetcrap();
 		dance();
